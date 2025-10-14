@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container .titulo {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.container .box {
+    flex-direction: column;
+    width: 50%;
+    margin-top: 25px;
+    padding: 40px;
+}
+
+.container .box .infoEmpresa {
+    margin: 25px 0;
+    padding: 0 25px;
+}
+
+.container .box .infoEmpresa p {
+    font-size: 25px;
+    margin: 8px;
+}
+
+.container .box .texts {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.container .box .text {
+    width: 80%;
+}
+
+.container .box .text p {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.container .box .data {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 100px 40px;
+}
+
+.container .box .data p {
+    font-size: 22px;
+}
+
+.container .box .assinaturas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+}
+
+.container .box .assinaturas .assinarColabo .colaborador,
+.container .box .assinaturas .assinarRespon .responsavel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
+}
