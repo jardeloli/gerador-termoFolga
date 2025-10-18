@@ -1,50 +1,84 @@
 <main>
     <div class="container">
         <div class="box">
-            <div class="titulo">
-                <h1>TERMO DE AUTORIZAÇÃO PARA COMPENSAÇÃO DE HORAS</h1>
+
+            <div class="selecao">
+
+                <p>Escolha a Empresa: <select id="empresa" [(ngModel)]="empresaSelecionada">
+                    <option *ngFor="let empresa of empresas" [ngValue]="empresa">{{empresa.name}}</option>
+                </select></p>
+
+                <p>Escolha o Funcionario: <select id="funcionario" [(ngModel)]="funcionarioSelecionado">
+                    <option *ngFor="let colaborador of colaboradores" [ngValue]="colaborador">{{colaborador.name}}
+                    </option>
+
+                </select></p>
+
             </div>
 
-            <div class="infoEmpresa">
-                <p>Nome da Empresa</p>
-                <p>CNPJ</p>
-                <P>Endereço</P>
-            </div>
-
-            <div class="texts">
-                <div class="text">
-                    <P>Eu,<b>nome</b>, portador(a) do CPF <b>000.000.000-00</b>, colaborador(a) da AMBEV - Dilemos declaro, para os devidos fins, que:</P>
-                    <p>1.Estou ciente e concordo em utilizar <b><input type="time"></b> do meu banco de horas para compensação de
-                        jornada, conforme previsto na Consolidação das Leis do Trabalho (CLT) e no Acordo Coletivo de Trabalho
-                        vigente, se aplicável.</p>
-                    <p>2.A compensação será realizada no dia <b><input type="date"></b> ficando autorizado o débito das horas
-                        correspondentes no meu banco de horas.</p>
-                    <p>3.Reconheço que este ajuste foi acordado previamente com a empresa, de forma voluntária e em conformidade com
-                        as normas internas.</p>
-                    <p>4.Declaro que estou ciente de que eventuais saldos remanescentes no banco de horas serão regularizados
-                        conforme os prazos legais estabelecidos.</p>
-                    <p>Por estar de acordo com os termos acima, firmo o presente termo de autorização.</p>
+            <div class="termoPdf">
+                <div class="titulo">
+                    <h1>TERMO DE AUTORIZAÇÃO PARA COMPENSAÇÃO DE HORAS</h1>
                 </div>
-            </div>
 
-            <div class="data">
-                <p>Balsas - Ma, _____ de ________________ de _______.</p>
-            </div>
-            
-            <div class="assinaturas">
-                <div class="assinarColabo">
-                    <p>_____________________________________________________________</p>
-                    <div class="colaborador">
-                        <h2>Colaborador(a)</h2>
+                <div class="infoEmpresa">
+                    <p>{{empresaSelecionada?.name}}</p>
+                    <p>{{empresaSelecionada?.cnpj}}</p>
+                    <P>{{empresaSelecionada?.endereco}}</P>
+                </div>
+
+                <div class="texts">
+                    <div class="text">
+
+
+                        <P>Eu, <strong>{{funcionarioSelecionado?.name}}</strong>, portador(a) do CPF
+                            <strong>{{funcionarioSelecionado?.cpf}}</strong>, colaborador(a) da AMBEV - Dilemos
+                            declaro,
+                            para os devidos fins, que:
+                        </P>
+                        <p>1.Estou ciente e concordo em utilizar <b><input type="time"></b> do meu banco de horas para
+                            compensação de
+                            jornada, conforme previsto na Consolidação das Leis do Trabalho (CLT) e no Acordo Coletivo
+                            de
+                            Trabalho
+                            vigente, se aplicável.</p>
+                        <p>2.A compensação será realizada no dia <b><input type="date"></b> ficando autorizado o débito
+                            das
+                            horas
+                            correspondentes no meu banco de horas.</p>
+                        <p>3.Reconheço que este ajuste foi acordado previamente com a empresa, de forma voluntária e em
+                            conformidade com
+                            as normas internas.</p>
+                        <p>4.Declaro que estou ciente de que eventuais saldos remanescentes no banco de horas serão
+                            regularizados
+                            conforme os prazos legais estabelecidos.</p>
+                        <p>Por estar de acordo com os termos acima, firmo o presente termo de autorização.</p>
                     </div>
                 </div>
-                <div class="assinarRespon">
-                    <p>_____________________________________________________________</p>
-                    <div class="responsavel">
-                        <h2>Responsável</h2>
+
+                <div class="data">
+                    <p>Balsas - Ma, _____ de ________________ de _______.</p>
+                </div>
+
+                <div class="assinaturas">
+                    <div class="assinarColabo">
+                        <p>_____________________________________________________________</p>
+                        <div class="colaborador">
+                            <h2>Colaborador(a)</h2>
+                        </div>
+                    </div>
+                    <div class="assinarRespon">
+                        <p>_____________________________________________________________</p>
+                        <div class="responsavel">
+                            <h2>Responsável</h2>
+                        </div>
                     </div>
                 </div>
+
+
+
             </div>
+
         </div>
     </div>
 </main>
